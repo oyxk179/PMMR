@@ -29,7 +29,7 @@ python preprocessing/protein_pretrain/protein_dti.py --dataset bindingdb
 python preprocessing/compound.py --dataset bindingdb
 ```
 ## Training & Evaluation
-If you want to train and test the affinity prediction task based on the data set we provide, please execute the following code:
+If you want to train and test the affinity prediction task based on the dataset we provide, please execute the following code:
 ```
 python main.py --objective regression --dataset davis 
 ```
