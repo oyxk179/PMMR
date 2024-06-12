@@ -29,11 +29,11 @@ python preprocessing/protein_pretrain/protein_dti.py --dataset bindingdb
 python preprocessing/compound.py --dataset bindingdb
 ```
 ## Training & Evaluation
-If you want to train and test the affinity prediction task based on the dataset we provide, please execute the following code:
+To train and test the affinity prediction task based on the dataset we provide, please execute the following code:
 ```
 python main.py --objective regression --dataset pdb --batch_size 128 --max_epochs 200 --learning_rate 0.001
 ```
-And if you want to train and test classification tasks, please execute the following code:
+To train and test classification tasks, please execute the following code:
 ```
 python main.py --objective classification --dataset bindingdb --batch_size 64 --max_epochs 500 --learning_rate 0.001
 ```
