@@ -18,10 +18,10 @@ esm 2.0.0<br>
 transformers 4.35.2<br>
 
 ## Data preprocessing
-Before running, please generate pre-trained features of proteins and drugs. If you want to perform affinity prediction tasks, taking the Davis data set as an example, you need to execute the following command:
+Before running, please generate pre-trained features of proteins and drugs. If you want to perform affinity prediction tasks, taking the PDBbind data set as an example, you need to execute the following command:
 ```
-python preprocessing/protein_pretrain/protein_dta.py --dataset davis
-python preprocessing/compound.py --dataset davis
+python preprocessing/protein_pretrain/protein_dta.py --dataset pdb
+python preprocessing/compound.py --dataset pdb
 ```
 And if you want to perform classification task, please run the following code:
 ```
@@ -31,9 +31,9 @@ python preprocessing/compound.py --dataset bindingdb
 ## Training & Evaluation
 If you want to train and test the affinity prediction task based on the dataset we provide, please execute the following code:
 ```
-python main.py --objective regression --dataset davis 
+python main.py --objective regression --dataset pdb --batch_size 128 ----max_epochs 200 learning_rate 0.001
 ```
 And if you want to train and test classification tasks, please execute the following code:
 ```
-python main.py --objective classification --dataset bindingdb
+python main.py --objective classification --dataset bindingdb --batch_size 64 ----max_epochs 500 learning_rate 0.001
 ```
