@@ -37,7 +37,7 @@ Then switch to the preprocessing folder and execute the following command:
 python compound_pretrain.py --dataset bindingdb
 ```
 ## Training & Evaluation
-To train and test the affinity prediction task based on the dataset we provide, please execute the following code:
+To train and test the affinity prediction task based on the dataset we provide, please switch to the main folder and execute the command:
 ```
 python main.py --objective regression --dataset pdb --batch_size 128 --max_epochs 200 --learning_rate 0.001
 ```
