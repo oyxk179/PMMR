@@ -18,15 +18,23 @@ esm 2.0.0<br>
 transformers 4.35.2<br>
 
 ## Data preprocessing
-Before running, please generate pre-trained features of proteins and drugs. If you want to perform affinity prediction tasks, taking the PDBbind data set as an example, you need to execute the following command:
+### Regression
+Before running, please generate pre-trained features of proteins and drugs. If you want to perform affinity prediction tasks, taking the PDBbind data set as an example, you need to switch to the preprocessing/protein_pretrain folder and execute the following command to generate protein features:
 ```
-python preprocessing/protein_pretrain/protein_dta.py --dataset pdb
-python preprocessing/compound.py --dataset pdb
+python protein_dta.py --dataset pdb
 ```
-And if you want to perform classification task, please run the following code:
+Then switch to the preprocessing folder and execute the following command:
 ```
-python preprocessing/protein_pretrain/protein_dti.py --dataset bindingdb
-python preprocessing/compound.py --dataset bindingdb
+python compound_pretrain.py --dataset pdb
+```
+### Classification
+And if you want to perform classification task, please switch to the preprocessing/protein_pretrain folder and execute the following command to generate protein features:
+```
+python protein_dti.py --dataset bindingdb
+```
+Then switch to the preprocessing folder and execute the following command:
+```
+python compound_pretrain.py --dataset bindingdb
 ```
 ## Training & Evaluation
 To train and test the affinity prediction task based on the dataset we provide, please execute the following code:
